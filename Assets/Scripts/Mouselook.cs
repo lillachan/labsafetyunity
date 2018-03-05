@@ -36,9 +36,9 @@ public class Mouselook : MonoBehaviour {
 		}
 
 		transform.Rotate(rot, turnSpeed * Time.deltaTime);
-	}*/
-
-	/*void KeyboardMovement()
+	}
+*/
+/*	void KeyboardMovement()
 	{
 		var sensitivity = 0.01f;
 		var movementAmount = 0.5f;
@@ -55,11 +55,11 @@ public class Mouselook : MonoBehaviour {
 		if (vMove > sensitivity) movementVector.y = movementAmount;
 		// Using Translate allows you to move while taking the current rotation into consideration
 		transform.Translate(movementVector);
-	} */
+	} 
 	// Use this for initialization
 	//void Start () {
 	//	
-	//}
+	//} */
 	
 	// Update is called once per frame
 	void Update () {
@@ -68,5 +68,6 @@ public class Mouselook : MonoBehaviour {
 		pitch -= speedV * Input.GetAxis("Mouse Y");
 
 		transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
 	}
-}
+} 
