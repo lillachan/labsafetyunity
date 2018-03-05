@@ -25,7 +25,7 @@ public class myclick : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		transform.localScale += new Vector3(0.1F, 0, 0);
+		//transform.localScale += new Vector3(0.1F, 0, 0);
 		UI.SetActive(!x);
 		x = !x;
 	}
