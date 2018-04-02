@@ -10,6 +10,13 @@ public class Mouselook : MonoBehaviour {
 
 	private float yaw = 0.0f;
 	private float pitch = 0.0f;
+	bool zoomToggle = false;
+	private float normalFOV;
+
+	void start() {
+		normalFOV = Camera.current.fieldOfView;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 	/*void MouseAiming()
 	{
 		var rot = new Vector3(0f, 0f, 0f);
@@ -63,11 +70,30 @@ public class Mouselook : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// Right-click zoom
+		if (Input.GetMouseButton(1))
+			//if (zoomToggle == false) {
+			//	zoomToggle = true;
+			Camera.current.fieldOfView = 20;
+		//}
+		else
+		{
+			//	zoomToggle = true;
+			Camera.current.fieldOfView = 60;
+		}
 		//MouseAiming ();
 		yaw += speedH * Input.GetAxis("Mouse X");
 		pitch -= speedV * Input.GetAxis("Mouse Y");
 
 		transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+
+		// Lock mouse in center. Hold ESC to release.
+		if (Input.GetKey (KeyCode.Escape))
+			//Screen.lockCursor = false;
+			Cursor.lockState = CursorLockMode.None;
+		else
+			Cursor.lockState = CursorLockMode.Locked;
+
 
 	}
 } 
