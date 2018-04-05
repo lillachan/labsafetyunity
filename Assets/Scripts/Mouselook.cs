@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mouselook : MonoBehaviour {
 	//public float turnSpeed = 50f;
+	public GameObject UI;
 
 	public float speedH = 2.0f;
 	public float speedV = 2.0f;
@@ -13,9 +14,19 @@ public class Mouselook : MonoBehaviour {
 	bool zoomToggle = false;
 	private float normalFOV;
 
+
+
 	void start() {
+		UI = GameObject.FindWithTag ("Menu");
 		normalFOV = Camera.current.fieldOfView;
+		//Cursor.lockState = CursorLockMode.Locked;
+		//UnityEngine.Cursor.visible = false;
+		lockCamera();
+	}
+
+	public void lockCamera() {
 		Cursor.lockState = CursorLockMode.Locked;
+		UnityEngine.Cursor.visible = false;
 	}
 	/*void MouseAiming()
 	{
@@ -88,12 +99,17 @@ public class Mouselook : MonoBehaviour {
 		transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
 		// Lock mouse in center. Hold ESC to release.
-		if (Input.GetKey (KeyCode.Escape))
+/*		if (Input.GetKey (KeyCode.Escape))
 			//Screen.lockCursor = false;
 			Cursor.lockState = CursorLockMode.None;
-		else
+		else */
+			//Cursor.lockState = CursorLockMode.Locked;
+		if (UI.activeSelf) {
+			Cursor.lockState = CursorLockMode.None;
+		} else {
 			Cursor.lockState = CursorLockMode.Locked;
+		}
 
-
+		UnityEngine.Cursor.visible = false;
 	}
 } 

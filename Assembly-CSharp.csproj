@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\click_on_yes.cs" />
      <Compile Include="Assets\myclick.cs" />
+     <Compile Include="Assets\myclick_back.cs" />
      <Compile Include="Assets\Scripts\Mouselook.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
