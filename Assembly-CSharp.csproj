@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\click_on_yes.cs" />
+     <Compile Include="Assets\Scripts\Hall1toMain.cs" />
+     <Compile Include="Assets\Scripts\Hall2toMain.cs" />
+     <Compile Include="Assets\Scripts\Hall3toMain.cs" />
      <Compile Include="Assets\Scripts\in4Scenes.cs" />
      <Compile Include="Assets\Scripts\in6Scenes.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -61,6 +64,9 @@
      <Compile Include="Assets\Scripts\nextScene.cs" />
      <Compile Include="Assets\Scripts\previousScene.cs" />
      <Compile Include="Assets\Scripts\SomeScenesAgo.cs" />
+     <Compile Include="Assets\Scripts\ToHall1.cs" />
+     <Compile Include="Assets\Scripts\ToHall2.cs" />
+     <Compile Include="Assets\Scripts\ToHall3.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
