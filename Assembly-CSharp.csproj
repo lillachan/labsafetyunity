@@ -59,11 +59,8 @@
      <Compile Include="Assets\Scripts\Mouselook.cs" />
      <Compile Include="Assets\Scripts\myclick.cs" />
      <Compile Include="Assets\Scripts\nextScene.cs" />
-<<<<<<< HEAD
-=======
      <Compile Include="Assets\Scripts\previousScene.cs" />
      <Compile Include="Assets\Scripts\SomeScenesAgo.cs" />
->>>>>>> 3488b50549afb9438f9d5cac6cc4facbfd164d13
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
