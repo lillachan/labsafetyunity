@@ -542,9 +542,26 @@ Prefab:
       propertyPath: m_Name
       value: Front Arrow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114031329876781952, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &453151041 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1731828696270816, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40,
+    type: 2}
+  m_PrefabInternal: {fileID: 453151040}
+--- !u!114 &453151042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453151041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3f2a115115047458280aa05ac841aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &501058071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,6 +1731,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114302587914853016, guid: e24cccb9b21884f349a709e14aea33f0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e24cccb9b21884f349a709e14aea33f0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2096172645 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1077208396255484, guid: e24cccb9b21884f349a709e14aea33f0,
+    type: 2}
+  m_PrefabInternal: {fileID: 2096172644}
+--- !u!114 &2096172646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096172645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f4cd13974356d42b265c0a922f6520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

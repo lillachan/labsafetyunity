@@ -172,9 +172,26 @@ Prefab:
       propertyPath: m_Name
       value: Front Arrow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114031329876781952, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &375495475 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1731828696270816, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40,
+    type: 2}
+  m_PrefabInternal: {fileID: 375495474}
+--- !u!114 &375495476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375495475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6d8fb2d7df998448b8a3cf150d6d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &402182087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1620557072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3778560410e449959fb7772ae6b93b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 362f70336f38cc0408a874a80e1f554f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1785070390
