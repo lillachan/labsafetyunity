@@ -1,1 +1,1 @@
-Assets/Materials/mainhall_9.png
+Assets/Test/360_0026_pano.jpg
