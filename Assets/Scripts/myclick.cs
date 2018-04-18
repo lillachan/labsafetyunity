@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class myclick : MonoBehaviour {
 
-	public GameObject UI;
+	public static GameObject UI;
 	public Text text;
-    public GameObject controller;
+    public static GameObject controller;
     public string id;
 
 	// Use this for initialization
 	void Start () {
-		UI = GameObject.FindWithTag("Menu");
-        controller = GameObject.FindWithTag("GameController");
+        if (UI == null) {
+            UI = GameObject.FindWithTag("Menu");
+            controller = GameObject.FindWithTag("GameController");
+        }
         
 		UI.SetActive (false);
 		if (UI != null) {

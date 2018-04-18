@@ -15,6 +15,7 @@ public class LevelStateScript : MonoBehaviour {
 		populateDict();
 	}
 	private void InstanceControl(){
+        Debug.Log("instance:"+(instance == this).ToString());
 		if(instance == null) {
 			instance = this;
 			DontDestroyOnLoad(this);
@@ -23,6 +24,7 @@ public class LevelStateScript : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
+
     private void populateDict()
     {
         //one line per question
@@ -104,7 +106,7 @@ public class LevelStateScript : MonoBehaviour {
 
 	void Start () {
 		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
-        DontDestroyOnLoad(canvas);
+        //DontDestroyOnLoad(canvas);
         Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
 	}
 	
