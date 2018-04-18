@@ -1,6 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/randomClick.cs">
+    <Files>
+      <File FileName="Assets/Scripts/startScore.cs" Line="9" Column="57" />
+      <File FileName="Assets/Scripts/myclick.cs" Line="33" Column="23" />
+      <File FileName="Assets/Scripts/LevelStateScript.cs" Line="112" Column="57" />
+      <File FileName="Assets/Scripts/randomClick.cs" Line="10" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

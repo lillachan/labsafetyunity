@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\click_on_yes.cs" />
+     <Compile Include="Assets\Scripts\DontDestroyQCanvas.cs" />
      <Compile Include="Assets\Scripts\LevelStateScript.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Mouselook.cs" />
