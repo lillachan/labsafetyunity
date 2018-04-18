@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class myclick : MonoBehaviour {
-
+	public startScore startScore;
 	public static GameObject UI;
 	public Text text;
     public static GameObject controller;
@@ -34,5 +34,7 @@ public class myclick : MonoBehaviour {
         //UI.SetActive(!UI.activeInHierarchy);
         controller.GetComponent<LevelStateScript>().updateQ(id);
         UI.SetActive(true);
+		PlayerPrefs.SetInt ("Score", PlayerPrefs.GetInt ("Score")+5);
+		Debug.Log ("Score = " + PlayerPrefs.GetInt ("Score"));
 	}
 }
