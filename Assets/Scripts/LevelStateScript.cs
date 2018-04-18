@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelStateScript : MonoBehaviour {
-
+	public startScore startScore;
 	public static LevelStateScript instance;
 	public Canvas canvas;
 	public Question currentQ;
@@ -102,6 +103,15 @@ public class LevelStateScript : MonoBehaviour {
         //Debug.Log(a);
     }
 
+	public void finalJudgement(){
+		if (currentQ.selectedIsCorrect ()) {
+			PlayerPrefs.SetInt ("Score", PlayerPrefs.GetInt ("Score") + 5);
+		} else {
+			PlayerPrefs.SetInt ("Score", PlayerPrefs.GetInt ("Score") - 1);
+		}
+		Debug.Log ("Score = " + PlayerPrefs.GetInt ("Score"));
+	}
+
 	void Start () {
 		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
         DontDestroyOnLoad(canvas);
@@ -112,6 +122,7 @@ public class LevelStateScript : MonoBehaviour {
 	void Update () {
 		
 	}
+		
 
 }
 
@@ -158,4 +169,5 @@ public class Question {
 		}
 		return false;
 	}
+
 }

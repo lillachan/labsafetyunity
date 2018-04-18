@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5350975, g: 0.52609664, b: 0.51438063, a: 1}
+  m_IndirectSpecularColor: {r: 0.53509784, g: 0.52609706, b: 0.5143809, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -544,7 +544,7 @@ Transform:
   m_GameObject: {fileID: 534173103}
   m_LocalRotation: {x: -0.1911128, y: 0.30978203, z: -0.52792263, w: 0.76733875}
   m_LocalPosition: {x: -3.915, y: -0.841, z: 3.951}
-  m_LocalScale: {x: 0.09611715, y: 0.09611711, z: 0.03832514}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.04}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -557,11 +557,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 534173103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb9fd02b88abc6459e20e41dcff6a9c, type: 3}
+  m_Script: {fileID: 11500000, guid: af06ebf43cdc7304b890b05ebf1ef560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
   text: {fileID: 0}
+  controller: {fileID: 0}
+  id: fireExtinguisher
 --- !u!1 &656858562
 GameObject:
   m_ObjectHideFlags: 0
