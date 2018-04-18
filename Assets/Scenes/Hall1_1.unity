@@ -742,7 +742,6 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 195427053}
-  - {fileID: 1149573303}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1353,91 +1352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedH: 2
   speedV: 2
---- !u!1001 &1149573302
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 733285832}
-    m_Modifications:
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.36919993
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.024799919
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.15879989
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.45963466
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.55183446
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.49633744
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.48771292
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 95.040985
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 1011.056
-      objectReference: {fileID: 0}
-    - target: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 195.271
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556119526242586, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1556119526242586, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6ff6f6bff0442354da4ce93565824192, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1149573303 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4837265458681836, guid: 6ff6f6bff0442354da4ce93565824192,
-    type: 2}
-  m_PrefabInternal: {fileID: 1149573302}
---- !u!1 &1149573304 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1556119526242586, guid: 6ff6f6bff0442354da4ce93565824192,
-    type: 2}
-  m_PrefabInternal: {fileID: 1149573302}
---- !u!114 &1149573305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1149573304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb9fd02b88abc6459e20e41dcff6a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UI: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &1383849676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1893,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1081216160}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
