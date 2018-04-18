@@ -7,10 +7,14 @@ public class myclick : MonoBehaviour {
 
 	public GameObject UI;
 	public Text text;
+    public GameObject controller;
+    public string id;
 
 	// Use this for initialization
 	void Start () {
-		UI = GameObject.FindWithTag ("Menu");
+		UI = GameObject.FindWithTag("Menu");
+        controller = GameObject.FindWithTag("GameController");
+        
 		UI.SetActive (false);
 		if (UI != null) {
 			text = UI.GetComponent<Text> ();
@@ -24,8 +28,9 @@ public class myclick : MonoBehaviour {
 	}
 
 	void OnMouseUp() {
-		//transform.localScale += new Vector3(0.1F, 0, 0);
-		//UI.SetActive(!UI.activeInHierarchy);
-		UI.SetActive(true);
+        //transform.localScale += new Vector3(0.1F, 0, 0);
+        //UI.SetActive(!UI.activeInHierarchy);
+        controller.GetComponent<LevelStateScript>().updateQ(id);
+        UI.SetActive(true);
 	}
 }
