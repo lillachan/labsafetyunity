@@ -104,7 +104,8 @@ public class LevelStateScript : MonoBehaviour {
 
 	void Start () {
 		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
-        //Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
+        DontDestroyOnLoad(canvas);
+        Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
 	}
 	
 	// Update is called once per frame
