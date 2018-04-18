@@ -32,5 +32,6 @@ public class myclick : MonoBehaviour {
         //UI.SetActive(!UI.activeInHierarchy);
         controller.GetComponent<LevelStateScript>().updateQ(id);
         UI.SetActive(true);
+		PlayerPrefs.SetInt ("Score", PlayerPrefs.GetInt ("Score")+5);
 	}
 }

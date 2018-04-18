@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Mouselook.cs" />
      <Compile Include="Assets\Scripts\myclick.cs" />
+     <Compile Include="Assets\Scripts\startScore.cs" />
      <Compile Include="Assets\Scripts\toHall1_1.cs" />
      <Compile Include="Assets\Scripts\toHall1_2.cs" />
      <Compile Include="Assets\Scripts\toHall1_3.cs" />
