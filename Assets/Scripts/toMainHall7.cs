@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class toMainHall7 : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Material arrow;
+    public Material hilighted;
+
+    void OnMouseOver()
+    {
+        GetComponent<Renderer>().material = hilighted;
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponent<Renderer>().material = arrow;
+    }
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
