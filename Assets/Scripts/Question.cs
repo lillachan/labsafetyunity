@@ -1,4 +1,6 @@
-﻿public class Question
+﻿using UnityEngine;
+
+public class Question
 {
     public string qText;
     public string aText;
