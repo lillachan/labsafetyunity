@@ -17,6 +17,10 @@ public class Mouselook : MonoBehaviour {
 		normalFOV = Camera.current.fieldOfView;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
+
+	public void EnableMouse() {
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 	/*void MouseAiming()
 	{
 		var rot = new Vector3(0f, 0f, 0f);
