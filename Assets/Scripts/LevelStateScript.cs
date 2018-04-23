@@ -9,11 +9,20 @@ public class LevelStateScript : MonoBehaviour {
 	public Canvas canvas;
 	public Question currentQ;
 	public Dictionary<string, Question> qDict;
+    private Dictionary<string, bool> visitedSceneList;
+    private string currentScene;
+    
 	// Use this for initialization
 	void Awake() {
 		this.InstanceControl();
 		populateDict();
-	}
+        Scene scene = SceneManager.GetActiveScene();
+        visitedSceneList = new Dictionary<string, bool>();
+        currentScene = scene.name;
+        visitedSceneList.Add(currentScene,true);
+        SceneManager.sceneLoaded += addSceneToVisited;
+
+    }
 	private void InstanceControl(){
         Debug.Log("instance:"+(instance == this).ToString());
 		if(instance == null) {
@@ -104,8 +113,25 @@ public class LevelStateScript : MonoBehaviour {
 		}
 		Debug.Log ("Score = " + PlayerPrefs.GetInt ("Score"));
 	}
+    public void addSceneToVisited(Scene loadedScene, LoadSceneMode mode)
+    {
+        string name = SceneManager.GetActiveScene().name;
+        if (!visitedSceneList.ContainsKey(name))
+        {
+            visitedSceneList.Add(name, true);
+        }
+        Debug.Log(name);
+    }
+    public Dictionary<string, bool>.KeyCollection getScenes()
+    {
+        return visitedSceneList.Keys;
+    }
+    public bool queryScenesDict(string scene)
+    {
+        return visitedSceneList[scene];
+    }
 
-	void Start () {
+    void Start () {
 		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
         //DontDestroyOnLoad(canvas);
         Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
