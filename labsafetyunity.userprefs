@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Mouselook.cs">
     <Files>
       <File FileName="Assets\Scripts\in4Scenes.cs" Line="1" Column="1" />
@@ -8,6 +9,14 @@
       <File FileName="Assets\Scripts\MoreScenesAgo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Mouselook.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\myclick.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/randomClick.cs">
+    <Files>
+      <File FileName="Assets/Scripts/startScore.cs" Line="9" Column="57" />
+      <File FileName="Assets/Scripts/myclick.cs" Line="33" Column="23" />
+      <File FileName="Assets/Scripts/LevelStateScript.cs" Line="112" Column="57" />
+      <File FileName="Assets/Scripts/randomClick.cs" Line="10" Column="3" />
+>>>>>>> master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
