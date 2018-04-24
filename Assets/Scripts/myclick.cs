@@ -21,7 +21,7 @@ public class myclick : MonoBehaviour {
 		UI.SetActive (false);
 		if (UI != null) {
 			text = UI.GetComponent<Text> ();
-			Debug.Log (text);
+			//Debug.Log (text);
 		}
         cam = GameObject.FindWithTag("MainCamera");
     }

@@ -13,12 +13,13 @@ public class Mouselook : MonoBehaviour {
 	bool zoomToggle = false;
 	private float normalFOV;
 
-	void start() {
-		normalFOV = Camera.current.fieldOfView;
-		Cursor.lockState = CursorLockMode.Locked;
-	}
+	public void Start() {
+        pitch = GameObject.FindWithTag("GameController").GetComponent<LevelStateScript>().getX();
+        yaw = GameObject.FindWithTag("GameController").GetComponent<LevelStateScript>().getY();
 
-	public void EnableMouse() {
+    }
+
+    public void EnableMouse() {
 		Cursor.lockState = CursorLockMode.Locked;
 	}
 	/*void MouseAiming()

@@ -11,6 +11,8 @@ public class LevelStateScript : MonoBehaviour {
 	public Dictionary<string, Question> qDict;
     private Dictionary<string, bool> visitedSceneList;
     private string currentScene;
+    private float camX = 0.0f;
+    private float camY = 0.0f;
     
 	// Use this for initialization
 	void Awake() {
@@ -20,11 +22,12 @@ public class LevelStateScript : MonoBehaviour {
         visitedSceneList = new Dictionary<string, bool>();
         currentScene = scene.name;
         visitedSceneList.Add(currentScene,true);
-        SceneManager.sceneLoaded += addSceneToVisited;
+        SceneManager.sceneLoaded += updatedScene;
 
     }
+
 	private void InstanceControl(){
-        Debug.Log("instance:"+(instance == this).ToString());
+        //Debug.Log("instance:"+(instance == this).ToString());
 		if(instance == null) {
 			instance = this;
 			DontDestroyOnLoad(this);
@@ -37,10 +40,11 @@ public class LevelStateScript : MonoBehaviour {
     private void populateDict()
     {
         qDict = LabQuestions.import();
-        Debug.Log("test");
+        //Debug.Log("test");
     }
+
     public void updateQ(string id) {
-        Debug.Log(id);
+        //Debug.Log(id);
 		currentQ = qDict[id];
         currentQ.foundIt();
 		updateCanvas();
@@ -58,7 +62,7 @@ public class LevelStateScript : MonoBehaviour {
 
 	public void updateCanvas(){
         //code to set canvas elements for current question
-        Debug.Log(canvas.transform.GetChild(0).GetType());
+        //Debug.Log(canvas.transform.GetChild(0).GetType());
         Transform panel = canvas.transform.GetChild(0);
         //set question text
         panel.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = currentQ.qText;
@@ -67,63 +71,50 @@ public class LevelStateScript : MonoBehaviour {
         panel.transform.Find("A").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.aText;
 
         if(currentQ.currSelected() == "A") {
-            var colors = panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(200, 200, 200);
-            panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.grey;
         }
         else{
-            var colors = panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(255, 255, 255);
-            panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.white;
         }
         //b
         panel.transform.Find("B").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.bText;
         if (currentQ.currSelected() == "B")
         {
-            var colors = panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(200, 200, 200);
-            panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.grey;
         }
         else
         {
-            var colors = panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(255, 255, 255);
-            panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.white;
         }
         //c
         panel.transform.Find("C").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.cText;
         if (currentQ.currSelected() == "C")
         {
-            var colors = panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(200, 200, 200);
-            panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.grey;
         }
         else
         {
-            var colors = panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(255, 255, 255);
-            panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.white;
         }
         //d
         panel.transform.Find("D").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.dText;
         if (currentQ.currSelected() == "D")
         {
-            var colors = panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(200, 200, 200);
-            panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.grey;
         }
         else
         {
-            var colors = panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().colors;
-            colors.normalColor = new Color(255, 255, 255);
-            panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().colors = colors;
+            panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.white;
         }
-        //string a = panel.GetComponent<UnityEngine.UI.Text>().text;
-        //panel.GetComponent<UnityEngine.UI.Text>().text = currentQ.qText;
-        //Debug.Log(a);
     }
 
-    public void addSceneToVisited(Scene loadedScene, LoadSceneMode mode)
+    public void updatedScene(Scene scene, LoadSceneMode mode)
+    {
+        addSceneToVisited();
+        setCameraOrientation();
+    }
+
+    public void addSceneToVisited()
     {
         string name = SceneManager.GetActiveScene().name;
         if (!visitedSceneList.ContainsKey(name))
@@ -131,27 +122,50 @@ public class LevelStateScript : MonoBehaviour {
             visitedSceneList.Add(name, true);
         }
 
-        Dictionary<string, bool>.KeyCollection
-                //Debug.Log(name);
-                vr = getScenes();
+        Dictionary<string, bool>.KeyCollection vr = getScenes();
         foreach (string str in vr)
         {
-            print("list: "+str);
+            //Debug.Log("list: "+str);
         }
+
+
     }
+
+    public void setCameraOrientation()
+    {
+        //Debug.Log("pre");
+        //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(new Vector3(90, 0, 30));
+        //Debug.Log("post");
+    }
+
     public Dictionary<string, bool>.KeyCollection getScenes()
     {
         return visitedSceneList.Keys;
     }
+
     public bool queryScenesDict(string scene)
     {
         return visitedSceneList[scene];
     }
 
+    public void saveCamera(float x, float y)
+    {
+        camX = x;
+        camY = y;
+    }
+    public float getX()
+    {
+        return camX;
+    }
+    public float getY()
+    {
+        return camY;
+    }
+
     void Start () {
 		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
         //DontDestroyOnLoad(canvas);
-        Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
+        //Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
         
 	}
 	

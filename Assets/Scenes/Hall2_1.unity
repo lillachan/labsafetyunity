@@ -337,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: 
-  cam: {fileID: 0}
+  cam: {fileID: 1404098084}
 --- !u!1 &1143246658
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: pitaChips
-  cam: {fileID: 0}
+  cam: {fileID: 1404098084}
 --- !u!23 &1143246660
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: powerade
-  cam: {fileID: 0}
+  cam: {fileID: 1404098084}
 --- !u!23 &1269711960
 MeshRenderer:
   m_ObjectHideFlags: 0

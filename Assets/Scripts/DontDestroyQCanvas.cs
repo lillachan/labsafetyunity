@@ -12,7 +12,7 @@ public class DontDestroyQCanvas : MonoBehaviour {
     }
     private void InstanceControl()
     {
-        Debug.Log("instance:" + (instance == this).ToString());
+        //Debug.Log("instance:" + (instance == this).ToString());
         if (instance == null)
         {
             instance = this;

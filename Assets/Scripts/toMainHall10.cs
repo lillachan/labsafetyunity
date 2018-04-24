@@ -28,8 +28,11 @@ public class toMainHall10 : MonoBehaviour {
 		
 	}
 
-    void OnMouseDown()
+    void OnMouseUpAsButton()
     {
+        float x = GameObject.FindWithTag("MainCamera").transform.eulerAngles.x;
+        float y = GameObject.FindWithTag("MainCamera").transform.eulerAngles.y;
+        GameObject.FindWithTag("GameController").GetComponent<LevelStateScript>().saveCamera(x, y);
         SceneManager.LoadScene("Mainhall_10");
     }
 }

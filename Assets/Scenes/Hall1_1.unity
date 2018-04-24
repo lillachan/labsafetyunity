@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: waterBeaker
-  cam: {fileID: 0}
+  cam: {fileID: 1081216155}
 --- !u!1 &675895091
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: waterBeaker
-  cam: {fileID: 0}
+  cam: {fileID: 1081216155}
 --- !u!1 &1605010116 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1731828696270816, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40,

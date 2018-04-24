@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: pitaChips
-  cam: {fileID: 0}
+  cam: {fileID: 234469486}
 --- !u!23 &379435125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: powerade
-  cam: {fileID: 0}
+  cam: {fileID: 234469486}
 --- !u!1 &730897584
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,6 @@ GameObject:
   - component: {fileID: 784602266}
   - component: {fileID: 784602265}
   - component: {fileID: 784602269}
-  - component: {fileID: 784602264}
   m_Layer: 0
   m_Name: ExtensionCord?
   m_TagString: Untagged
@@ -516,20 +515,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &784602264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 784602263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb9fd02b88abc6459e20e41dcff6a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  id: 
-  cam: {fileID: 0}
 --- !u!23 &784602265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -611,7 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: 
-  cam: {fileID: 0}
+  cam: {fileID: 234469486}
 --- !u!1 &899241200
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   id: liquidNitrogen
-  cam: {fileID: 0}
+  cam: {fileID: 234469486}
 --- !u!23 &899241202
 MeshRenderer:
   m_ObjectHideFlags: 0
