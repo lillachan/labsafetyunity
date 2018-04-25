@@ -84,7 +84,7 @@ public class Mouselook : MonoBehaviour {
 		else
 		{
 			//	zoomToggle = true;
-			//Camera.current.fieldOfView = 60;
+			Camera.current.fieldOfView = 60;
 		}
 		//MouseAiming ();
 		yaw += speedH * Input.GetAxis("Mouse X");
