@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5350975, g: 0.52609664, b: 0.51438063, a: 1}
+  m_IndirectSpecularColor: {r: 0.5350399, g: 0.5262214, b: 0.51434875, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 534173104}
   - component: {fileID: 534173108}
   m_Layer: 0
-  m_Name: WaterGlass
+  m_Name: waterBeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 852476787}
   - component: {fileID: 852476786}
   m_Layer: 0
-  m_Name: Tray
+  m_Name: Tray (delete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

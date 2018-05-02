@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 488381060}
   - component: {fileID: 488381064}
   m_Layer: 0
-  m_Name: Tray
+  m_Name: Tray (delete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1414052063}
   - component: {fileID: 1414052067}
   m_Layer: 0
-  m_Name: WaterGlass
+  m_Name: waterBeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

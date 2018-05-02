@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5599922, g: 0.55555326, b: 0.5435201, a: 1}
+  m_IndirectSpecularColor: {r: 0.5599348, g: 0.55568737, b: 0.5435016, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 972986265}
   - component: {fileID: 972986269}
   m_Layer: 0
-  m_Name: CylinderCart
+  m_Name: gasCylinderCart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 1656640369}
   - component: {fileID: 1656640373}
   m_Layer: 0
-  m_Name: NitrogenSeal
+  m_Name: liquidNitrogen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

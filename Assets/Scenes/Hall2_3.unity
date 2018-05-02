@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.57516915, g: 0.5679658, b: 0.55276245, a: 1}
+  m_IndirectSpecularColor: {r: 0.5751565, g: 0.5681177, b: 0.55274093, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4976098935643854, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1731828696270816, guid: 91e1a2b3f9b034d5aaa4ccc1e5f05b40, type: 2}
       propertyPath: m_Name
@@ -349,7 +349,7 @@ RectTransform:
   m_Children:
   - {fileID: 512738948}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -555,7 +555,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982359545
 GameObject:
@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 2003576521}
   - component: {fileID: 2003576525}
   m_Layer: 0
-  m_Name: NitrogenSeal
+  m_Name: liquidNitrogen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ Transform:
   m_LocalScale: {x: 0.08462914, y: 0.13135667, z: 0.03366428}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -87.381004, y: 0, z: 0}
 --- !u!114 &2003576525
 MonoBehaviour:
