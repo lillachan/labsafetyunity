@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 961498889}
   - component: {fileID: 961498893}
   m_Layer: 0
-  m_Name: ExtensionCord?
+  m_Name: hairDryer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +262,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961498888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -317,13 +317,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 961498888}
-  m_LocalRotation: {x: -0.11018593, y: 0.8320961, z: 0.5435289, w: -0.0071806298}
-  m_LocalPosition: {x: 3.464, y: -1.175, z: -4.043}
-  m_LocalScale: {x: 0.10902042, y: 0.046447095, z: 0.055713307}
+  m_LocalRotation: {x: -0.07603248, y: 0.83092076, z: 0.5493484, w: 0.044790186}
+  m_LocalPosition: {x: 0.903, y: -1.487, z: -4.406}
+  m_LocalScale: {x: 0.10902042, y: 0.046447095, z: 0.09710096}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -64.549, y: -162.15001, z: 333.585}
+  m_LocalEulerAnglesHint: {x: -66.888, y: -178.671, z: 348.666}
 --- !u!114 &961498893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143246658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -609,7 +609,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1269711958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
