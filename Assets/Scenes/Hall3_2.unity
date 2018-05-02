@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5719863, g: 0.57553756, b: 0.5674621, a: 1}
+  m_IndirectSpecularColor: {r: 0.5719841, g: 0.57573575, b: 0.5674547, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 605295708}
   - component: {fileID: 605295707}
   m_Layer: 0
-  m_Name: RhodiumWaste
+  m_Name: organicRhodiumWaste
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 605295706}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -274,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 605295706}
   m_LocalRotation: {x: -0.66401225, y: 0.067468084, z: 0.08756537, w: 0.73950535}
   m_LocalPosition: {x: 2.82, y: -4.79, z: 11.13}
-  m_LocalScale: {x: 0.08299055, y: 0.09099873, z: 0.2125699}
+  m_LocalScale: {x: 0.12068762, y: 0.1323334, z: 0.30912626}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 766632345}
   - component: {fileID: 766632344}
   m_Layer: 0
-  m_Name: Stool
+  m_Name: stools
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766632343}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 1607593680}
   - component: {fileID: 1607593679}
   m_Layer: 0
-  m_Name: HeatThing
+  m_Name: hotBath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1607593678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -587,13 +587,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1607593678}
-  m_LocalRotation: {x: -0.65207076, y: -0.13937601, z: -0.12714863, w: 0.7343101}
-  m_LocalPosition: {x: -4.39, y: -0.14, z: 8.86}
-  m_LocalScale: {x: 0.063197926, y: 0.1043188, z: 0.09372148}
+  m_LocalRotation: {x: -0.49539292, y: -0.06679342, z: -0.25580794, w: 0.8274581}
+  m_LocalPosition: {x: -4.48, y: -4.02, z: 8.34}
+  m_LocalScale: {x: 0.19321689, y: 0.23342223, z: 0.22650038}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -83.259, y: -19.339, z: -2.4250002}
+  m_LocalEulerAnglesHint: {x: -58.65, y: 15.944001, z: -43.354004}
 --- !u!1 &1723697935
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 1723697937}
   - component: {fileID: 1723697936}
   m_Layer: 0
-  m_Name: AquaRegia
+  m_Name: aquaRegia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723697935}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

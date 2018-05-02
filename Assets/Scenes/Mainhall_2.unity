@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 225221132}
   - component: {fileID: 225221131}
   m_Layer: 0
-  m_Name: Extinguisher
+  m_Name: fireExtinguisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 837434873}
   - component: {fileID: 837434872}
   m_Layer: 0
-  m_Name: WaterGlass
+  m_Name: waterBeaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 875957774}
   - component: {fileID: 875957773}
   m_Layer: 0
-  m_Name: Tray
+  m_Name: Tray (delete)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
