@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DontDestroyQCanvas : MonoBehaviour {
 
     public static DontDestroyQCanvas instance;
-    // Use this for initialization
+
     void Awake()
     {
         this.InstanceControl();
     }
     private void InstanceControl()
     {
-        //Debug.Log("instance:" + (instance == this).ToString());
         if (instance == null)
         {
             instance = this;
@@ -24,12 +21,17 @@ public class DontDestroyQCanvas : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
     void Start () {
-		
-	}
+    }
+    public void addListeners(LevelStateScript lvl)
+    {
+        Transform panel = this.transform.GetChild(0);
+        panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("A"); });
+        panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("B"); });
+        panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("C"); });
+        panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("D"); });
+    }
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}

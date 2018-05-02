@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System;
 
 public class LevelStateScript : MonoBehaviour {
-	//public startScore startScore;
 	public static LevelStateScript instance;
-	public Canvas canvas;
+	public GameObject canvas;
 	public Question currentQ;
 	public Dictionary<string, Question> qDict;
     private Dictionary<string, bool> visitedSceneList;
@@ -17,7 +17,6 @@ public class LevelStateScript : MonoBehaviour {
     Ray ray;
     int badClicks;
     
-	// Use this for initialization
 	void Awake() {
 		this.InstanceControl();
 		populateDict();
@@ -27,11 +26,23 @@ public class LevelStateScript : MonoBehaviour {
         visitedSceneList.Add(currentScene,true);
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         SceneManager.sceneLoaded += updatedScene;
-
+        if(canvas == null)
+        {
+            Debug.Log("runnint");
+            foreach (Canvas c in Resources.FindObjectsOfTypeAll<Canvas>())
+            {
+                Debug.Log(c.name);
+                if (c.name == "QCanvas")
+                {
+                    canvas = c.gameObject;
+                    break;
+                }
+            }
+        }
+        
     }
 
 	private void InstanceControl(){
-        //Debug.Log("instance:"+(instance == this).ToString());
 		if(instance == null) {
 			instance = this;
 			DontDestroyOnLoad(this);
@@ -44,11 +55,9 @@ public class LevelStateScript : MonoBehaviour {
     private void populateDict()
     {
         qDict = LabQuestions.import();
-        //Debug.Log("test");
     }
 
     public void updateQ(string id) {
-        //Debug.Log(id);
 		currentQ = qDict[id];
         currentQ.foundIt();
 		updateCanvas();
@@ -65,15 +74,10 @@ public class LevelStateScript : MonoBehaviour {
 	}
 
 	public void updateCanvas(){
-        //code to set canvas elements for current question
-        //Debug.Log(canvas.transform.GetChild(0).GetType());
         Transform panel = canvas.transform.GetChild(0);
-        //set question text
         panel.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = currentQ.qText;
-        //set answer text
-        //a
         panel.transform.Find("A").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.aText;
-
+        //a
         if(currentQ.currSelected() == "A") {
             panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().GetComponent<UnityEngine.UI.Image>().color = Color.grey;
         }
@@ -115,7 +119,15 @@ public class LevelStateScript : MonoBehaviour {
     public void updatedScene(Scene scene, LoadSceneMode mode)
     {
         addSceneToVisited();
-        setCameraOrientation();
+        if (SceneManager.GetActiveScene().name == "FinalScene")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void setScore()
+    {
+        throw new NotImplementedException();
     }
 
     public void addSceneToVisited()
@@ -133,13 +145,6 @@ public class LevelStateScript : MonoBehaviour {
         }
 
 
-    }
-
-    public void setCameraOrientation()
-    {
-        //Debug.Log("pre");
-        //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(new Vector3(90, 0, 30));
-        //Debug.Log("post");
     }
 
     public Dictionary<string, bool>.KeyCollection getScenes()
@@ -167,19 +172,16 @@ public class LevelStateScript : MonoBehaviour {
     }
 
     void Start () {
-		//canvas = GameObject.FindWithTag("Menu").GetComponent<Canvas>();
-        //DontDestroyOnLoad(canvas);
-        //Debug.Log(GameObject.FindWithTag("Menu").GetComponent<Canvas>().ToString());
-        
+        canvas.GetComponent<DontDestroyQCanvas>().addListeners(this);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0) && !canvas.isActiveAndEnabled)
+        if (Input.GetMouseButtonDown(0) && !(canvas.GetComponent<Canvas>().isActiveAndEnabled))
         {
             RaycastHit hit;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit)) // or whatever range, if applicable
+            if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("object clicked!");
             }
@@ -187,8 +189,6 @@ public class LevelStateScript : MonoBehaviour {
             {
                 badClicks++;
                 Debug.Log("count: "+badClicks);
-                // You didn't click on anything.
-                // Either out of range or empty skybox behind mouse cursor
             }
         }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5111127, g: 0.50792944, b: 0.49084675, a: 1}
+  m_IndirectSpecularColor: {r: 0.5111162, g: 0.50778824, b: 0.49088496, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -487,18 +487,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 387848607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781360183}
-        m_MethodName: answerClicked
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: B
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &387848607
@@ -772,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bf9352187646d46adf8c0166f32db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 789596375}
+  canvas: {fileID: 0}
 --- !u!4 &781360184
 Transform:
   m_ObjectHideFlags: 0
@@ -1298,18 +1287,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 978266568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781360183}
-        m_MethodName: answerClicked
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: A
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &978266568
@@ -1420,18 +1398,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 993039602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781360183}
-        m_MethodName: answerClicked
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: D
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &993039602
@@ -1755,18 +1722,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1743919240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781360183}
-        m_MethodName: answerClicked
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: C
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1743919240
@@ -2183,6 +2139,7 @@ GameObject:
   - component: {fileID: 2106360491}
   - component: {fileID: 2106360490}
   - component: {fileID: 2106360489}
+  - component: {fileID: 2106360493}
   m_Layer: 0
   m_Name: ExitDoor
   m_TagString: Untagged
@@ -2258,6 +2215,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 92.63098, y: 306.46002, z: 298.456}
+--- !u!114 &2106360493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106360488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e65685851dad57459eb9d2a074c7968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142552025
 GameObject:
   m_ObjectHideFlags: 0

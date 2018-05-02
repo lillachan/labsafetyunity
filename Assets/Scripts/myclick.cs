@@ -13,9 +13,12 @@ public class myclick : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (UI == null) {
-            UI = GameObject.FindWithTag("Menu");
+        if (controller == null) {
             controller = GameObject.FindWithTag("GameController");
+        }
+        if(UI == null)
+        {
+            UI = GameObject.FindWithTag("Menu");
         }
         
 		UI.SetActive (false);
