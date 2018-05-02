@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class LevelStateScript : MonoBehaviour {
 	//public startScore startScore;
@@ -13,6 +14,8 @@ public class LevelStateScript : MonoBehaviour {
     private string currentScene;
     private float camX = 0.0f;
     private float camY = 0.0f;
+    Ray ray;
+    int badClicks;
     
 	// Use this for initialization
 	void Awake() {
@@ -22,6 +25,7 @@ public class LevelStateScript : MonoBehaviour {
         visitedSceneList = new Dictionary<string, bool>();
         currentScene = scene.name;
         visitedSceneList.Add(currentScene,true);
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         SceneManager.sceneLoaded += updatedScene;
 
     }
@@ -171,7 +175,23 @@ public class LevelStateScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetMouseButtonDown(0) && !canvas.isActiveAndEnabled)
+        {
+            RaycastHit hit;
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit)) // or whatever range, if applicable
+            {
+                Debug.Log("object clicked!");
+            }
+            else
+            {
+                badClicks++;
+                Debug.Log("count: "+badClicks);
+                // You didn't click on anything.
+                // Either out of range or empty skybox behind mouse cursor
+            }
+        }
+
+    }
 
 }
