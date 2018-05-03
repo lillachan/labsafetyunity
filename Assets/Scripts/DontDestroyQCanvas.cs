@@ -27,10 +27,10 @@ public class DontDestroyQCanvas : MonoBehaviour {
     {
         Debug.Log("here");
         Transform panel = this.transform.GetChild(0);
-        panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("A"); });
-        panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("B"); });
-        panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("C"); });
-        panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("D"); });
+        panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(delegate { lvl.answerClicked("A"); });
+        panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(delegate { lvl.answerClicked("B"); });
+        panel.transform.Find("C").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(delegate { lvl.answerClicked("C"); });
+        panel.transform.Find("D").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(delegate { lvl.answerClicked("D"); });
     }
 	
 	void Update () {

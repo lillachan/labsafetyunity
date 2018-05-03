@@ -8,7 +8,6 @@ using TMPro;
 
 public class LevelStateScript : MonoBehaviour {
 	public static LevelStateScript instance;
-
 	public GameObject canvas;
 	public Question currentQ;
 	public Dictionary<string, Question> qDict;
@@ -20,23 +19,29 @@ public class LevelStateScript : MonoBehaviour {
     int badClicks;
     
 	void Awake() {
-		this.InstanceControl();
-		populateDict();
-        Scene scene = SceneManager.GetActiveScene();
-        visitedSceneList = new Dictionary<string, bool>();
-        currentScene = scene.name;
-        visitedSceneList.Add(currentScene,true);
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        SceneManager.sceneLoaded += updatedScene;
+		
+        if(instance == null)
+        {
+            Debug.Log("wtfdontrunme");
+            populateDict();
+            Scene scene = SceneManager.GetActiveScene();
+            visitedSceneList = new Dictionary<string, bool>();
+            currentScene = scene.name;
+            visitedSceneList.Add(currentScene, true);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            SceneManager.sceneLoaded += updatedScene;
+        }
+        InstanceControl();
     }
 
 	private void InstanceControl(){
 		if(instance == null) {
+            Debug.Log("amIrunnin?");
 			instance = this;
 			DontDestroyOnLoad(this);
 		}
 		else if(this != instance){
-			Destroy(this.gameObject);
+            DestroyImmediate(this.gameObject);
 		}
 	}
 
@@ -63,7 +68,6 @@ public class LevelStateScript : MonoBehaviour {
     }
 
 	public void updateCanvas(){
-        Debug.Log("udc");
         Transform panel = canvas.transform.GetChild(0);
         panel.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = currentQ.qText;
         panel.transform.Find("A").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.aText;
@@ -118,13 +122,19 @@ public class LevelStateScript : MonoBehaviour {
 
     private void setScore()
     {
-        Debug.Log(GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = "Score: "+scoreCalc());
+        int score = scoreCalc();
+        GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = "Score: " + score;
+        Debug.Log(score);
 
-        //Added Summary
-        GameObject.Find("Summary").GetComponent<TextMeshProUGUI>().text = "You found " +numFound() +" safety infractions out of 13.You correctly identified why " +numCorrect()+ " of those " +numFound()+ " safety infractions were unsafe.";
+        
+        GameObject.Find("Summary").GetComponent<TextMeshProUGUI>().text = "You found " +numFound() +" safety infractions out of "+numQs()+".You correctly identified why " +numCorrect()+ " of those " +numFound()+ " safety infractions were unsafe.";
     }
 
-    //for summary
+    private int numQs()
+    {
+        return qDict.Count;
+    }
+
     private int numFound()
     {
         int numFound = 0;
@@ -137,7 +147,7 @@ public class LevelStateScript : MonoBehaviour {
         }
         return numFound;
     }
-    //for summary
+    
     private int numCorrect()
     {
         int numCorrect = 0;
@@ -151,31 +161,43 @@ public class LevelStateScript : MonoBehaviour {
         return numCorrect;
     }
 
-    private int scoreCalc()
+    private int numWrong()
     {
-        int score = 0;
-        int numqs = qDict.Count;
-        int numCorrect =0;
-        int numFound= 0;
         int numWrong = 0;
-        foreach(KeyValuePair<string, Question> q in qDict)
+        foreach (KeyValuePair<string, Question> q in qDict)
         {
-            if (q.Value.foundBool())
-            {
-                numFound++;
-            }
             if (q.Value.selectedIsWrong())
             {
                 numWrong++;
             }
-            if (q.Value.selectedIsCorrect())
-            {
-                numCorrect++;
-            }
-
         }
+        return numWrong;
+    }
+    private int numMissed()
+    {
+        int numMissed = 0;
+        foreach (KeyValuePair<string, Question> q in qDict)
+        {
+            if(!q.Value.foundBool())
+            {
+                numMissed++;
+            }
+        }
+        return numMissed;
+    }
+
+
+    private int scoreCalc()
+    {
+        int score = 0;
         //    correct             found        chose wrong    missedq          clicked safe
-        score = numCorrect * 5 + numFound * 5 - numWrong - (numqs - numFound) - badClicks;
+        score = 5 * numCorrect() + 5 * numFound() - numWrong() - numMissed() - badClicks;
+        Debug.Log("nt: " +numQs());
+        Debug.Log("nc: " +numCorrect());
+        Debug.Log("nf: " +numFound());
+        Debug.Log("nw: " +numWrong());
+        Debug.Log("nm: " +numMissed());
+        Debug.Log("bc: " +badClicks);
         return score;
     }
 
@@ -196,7 +218,16 @@ public class LevelStateScript : MonoBehaviour {
 
     public bool queryScenesDict(string scene)
     {
-        return visitedSceneList[scene];
+        bool tmp;
+        try
+        {
+            tmp = visitedSceneList[scene];
+        }
+        catch
+        {
+            tmp = false;
+        }
+        return tmp;
     }
 
     public void saveCamera(float x, float y)
