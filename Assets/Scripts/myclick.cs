@@ -34,10 +34,11 @@ public class myclick : MonoBehaviour {
 		
 	}
 
-	void OnMouseUp() {
+	void OnMouseUpAsButton() {
         //transform.localScale += new Vector3(0.1F, 0, 0);
         //UI.SetActive(!UI.activeInHierarchy);
         controller.GetComponent<LevelStateScript>().updateQ(id);
+        controller.GetComponent<LevelStateScript>().updateCanvas();
         UI.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
 		DisableMouse ();
@@ -47,7 +48,7 @@ public class myclick : MonoBehaviour {
 		//Component look = cam.GetComponent<Mouselook> ();
 		//Component ml =
 
-		cam.GetComponent<Mouselook> ().enabled = false;
+		cam.GetComponent<Mouselook>().enabled = false;
 		//Camera.current.GetComponent<Mouselook>().enabled = false;
 		//Component looker = 
 //		cam.GetComponent<Mouselook> ().enabled = false;

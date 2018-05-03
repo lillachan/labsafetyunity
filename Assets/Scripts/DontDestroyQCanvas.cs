@@ -25,6 +25,7 @@ public class DontDestroyQCanvas : MonoBehaviour {
     }
     public void addListeners(LevelStateScript lvl)
     {
+        Debug.Log("here");
         Transform panel = this.transform.GetChild(0);
         panel.transform.Find("A").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("A"); });
         panel.transform.Find("B").GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { lvl.answerClicked("B"); });

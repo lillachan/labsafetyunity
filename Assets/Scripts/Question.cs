@@ -48,6 +48,17 @@ public class Question
             return false;
         }
     }
+    public bool selectedIsWrong()
+    {
+        if(isAnswered() && !selectedIsCorrect())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public bool isAnswered()
     {
         if (selected != null)

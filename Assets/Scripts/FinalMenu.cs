@@ -14,5 +14,9 @@ public class FinalMenu : MonoBehaviour {
     {
         Application.Quit();
     }
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
 
 }

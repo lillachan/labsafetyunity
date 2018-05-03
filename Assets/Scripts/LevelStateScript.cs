@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System;
+using TMPro;
 
 public class LevelStateScript : MonoBehaviour {
 	public static LevelStateScript instance;
+
 	public GameObject canvas;
 	public Question currentQ;
 	public Dictionary<string, Question> qDict;
@@ -26,20 +28,6 @@ public class LevelStateScript : MonoBehaviour {
         visitedSceneList.Add(currentScene,true);
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         SceneManager.sceneLoaded += updatedScene;
-        if(canvas == null)
-        {
-            Debug.Log("runnint");
-            foreach (Canvas c in Resources.FindObjectsOfTypeAll<Canvas>())
-            {
-                Debug.Log(c.name);
-                if (c.name == "QCanvas")
-                {
-                    canvas = c.gameObject;
-                    break;
-                }
-            }
-        }
-        
     }
 
 	private void InstanceControl(){
@@ -64,16 +52,18 @@ public class LevelStateScript : MonoBehaviour {
 	}
 
 	public void answerClicked(string ans) {
+        Debug.Log("clicked!");
 		if(!(ans == currentQ.currSelected())){
 			currentQ.setSelected(ans);
 		}
 		else {
 			currentQ.setSelected(null);
 		}
-		updateCanvas();
-	}
+        updateCanvas();
+    }
 
 	public void updateCanvas(){
+        Debug.Log("udc");
         Transform panel = canvas.transform.GetChild(0);
         panel.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = currentQ.qText;
         panel.transform.Find("A").transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = currentQ.aText;
@@ -121,13 +111,41 @@ public class LevelStateScript : MonoBehaviour {
         addSceneToVisited();
         if (SceneManager.GetActiveScene().name == "FinalScene")
         {
-            Destroy(this.gameObject);
+            setScore();
+            Destroy(instance.gameObject);
         }
     }
 
     private void setScore()
     {
-        throw new NotImplementedException();
+        Debug.Log(GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = "Score: "+scoreCalc());
+    }
+    private int scoreCalc()
+    {
+        int score = 0;
+        int numqs = qDict.Count;
+        int numCorrect =0;
+        int numFound= 0;
+        int numWrong = 0;
+        foreach(KeyValuePair<string, Question> q in qDict)
+        {
+            if (q.Value.foundBool())
+            {
+                numFound++;
+            }
+            if (q.Value.selectedIsWrong())
+            {
+                numWrong++;
+            }
+            if (q.Value.selectedIsCorrect())
+            {
+                numCorrect++;
+            }
+
+        }
+        //    correct             found        chose wrong    missedq          clicked safe
+        score = numCorrect * 5 + numFound * 5 - numWrong - (numqs - numFound) - badClicks;
+        return score;
     }
 
     public void addSceneToVisited()
@@ -137,13 +155,6 @@ public class LevelStateScript : MonoBehaviour {
         {
             visitedSceneList.Add(name, true);
         }
-
-        Dictionary<string, bool>.KeyCollection vr = getScenes();
-        foreach (string str in vr)
-        {
-            //Debug.Log("list: "+str);
-        }
-
 
     }
 
@@ -172,8 +183,25 @@ public class LevelStateScript : MonoBehaviour {
     }
 
     void Start () {
+        if (this.canvas == null)
+        {
+            Debug.Log("runnint");
+            foreach (Canvas c in Resources.FindObjectsOfTypeAll<Canvas>())
+            {
+                Debug.Log(c.name);
+                if (c.name == "QCanvas")
+                {
+                    canvas = c.gameObject;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log(canvas.ToString());
+        }
         canvas.GetComponent<DontDestroyQCanvas>().addListeners(this);
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
