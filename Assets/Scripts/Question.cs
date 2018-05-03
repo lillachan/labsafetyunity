@@ -9,6 +9,10 @@ public class Question
     public string dText;
     private string selected;
     private string correct;
+<<<<<<< HEAD
+=======
+    private bool found;
+>>>>>>> dupe-of-dupe
     public Question(string qText, string aText, string bText, string cText, string dText, string correct)
     {
         selected = null;
@@ -18,6 +22,10 @@ public class Question
         this.cText = cText;
         this.dText = dText;
         this.correct = correct;
+<<<<<<< HEAD
+=======
+        found = false;
+>>>>>>> dupe-of-dupe
     }
     public string currSelected()
     {
@@ -33,7 +41,11 @@ public class Question
         {
             selected = null;
         }
+<<<<<<< HEAD
         Debug.Log(currSelected());
+=======
+        //Debug.Log(currSelected());
+>>>>>>> dupe-of-dupe
     }
     public bool selectedIsCorrect()
     {
@@ -46,6 +58,20 @@ public class Question
             return false;
         }
     }
+<<<<<<< HEAD
+=======
+    public bool selectedIsWrong()
+    {
+        if(isAnswered() && !selectedIsCorrect())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+>>>>>>> dupe-of-dupe
     public bool isAnswered()
     {
         if (selected != null)
@@ -54,5 +80,16 @@ public class Question
         }
         return false;
     }
+<<<<<<< HEAD
+=======
+    public void foundIt()
+    {
+        found = true;
+    }
+    public bool foundBool()
+    {
+        return found;
+    }
+>>>>>>> dupe-of-dupe
 
 }

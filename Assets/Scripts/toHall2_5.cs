@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class toHall2_5 : MonoBehaviour {
+<<<<<<< HEAD
 
+=======
+    public GameObject UI;
+>>>>>>> dupe-of-dupe
     public Material arrow;
     public Material hilighted;
 
@@ -28,8 +32,32 @@ public class toHall2_5 : MonoBehaviour {
 		
 	}
 
+<<<<<<< HEAD
     void OnMouseDown()
     {
         SceneManager.LoadScene("Hall2_5");
+=======
+    void OnMouseUpAsButton()
+    {
+        if (UI == null)
+        {
+            foreach (Canvas c in Resources.FindObjectsOfTypeAll<Canvas>())
+            {
+                if (c.name == "QCanvas")
+                {
+                    UI = c.gameObject;
+                    break;
+                }
+            }
+        }
+        if (UI.activeSelf == false)
+        {
+            float x = GameObject.FindWithTag("MainCamera").transform.eulerAngles.x;
+            float y = GameObject.FindWithTag("MainCamera").transform.eulerAngles.y;
+            GameObject.FindWithTag("GameController").GetComponent<LevelStateScript>().saveCamera(x, y);
+            SceneManager.LoadScene("Hall2_5");
+        }
+        
+>>>>>>> dupe-of-dupe
     }
 }

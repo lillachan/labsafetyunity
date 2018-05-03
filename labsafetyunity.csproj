@@ -294,8 +294,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraHooks.cs" />
     <Compile Include="Assets\Scripts\click_on_yes.cs" />
     <Compile Include="Assets\Scripts\DontDestroyQCanvas.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\LabQuestions.cs" />
     <Compile Include="Assets\Scripts\LevelStateScript.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -304,6 +306,21 @@
     <Compile Include="Assets\Scripts\Question.cs" />
     <Compile Include="Assets\Scripts\randomClick.cs" />
     <Compile Include="Assets\Scripts\startScore.cs" />
+=======
+    <Compile Include="Assets\Scripts\FinalMenu.cs" />
+    <Compile Include="Assets\Scripts\LabQuestions.cs" />
+    <Compile Include="Assets\Scripts\LevelStateScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MapScript.cs" />
+    <Compile Include="Assets\Scripts\MoreScenesAgo.cs" />
+    <Compile Include="Assets\Scripts\Mouselook.cs" />
+    <Compile Include="Assets\Scripts\myclick.cs" />
+    <Compile Include="Assets\Scripts\myclick.old.cs" />
+    <Compile Include="Assets\Scripts\Question.cs" />
+    <Compile Include="Assets\Scripts\randomClick.cs" />
+    <Compile Include="Assets\Scripts\startScore.cs" />
+    <Compile Include="Assets\Scripts\toFinalScene.cs" />
+>>>>>>> dupe-of-dupe
     <Compile Include="Assets\Scripts\toHall1_1.cs" />
     <Compile Include="Assets\Scripts\toHall1_2.cs" />
     <Compile Include="Assets\Scripts\toHall1_3.cs" />

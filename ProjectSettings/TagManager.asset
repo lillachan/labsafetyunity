@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Menu
   - UI
+  - ScoreText
   layers:
   - Default
   - TransparentFX
