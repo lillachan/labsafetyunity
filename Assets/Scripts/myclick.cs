@@ -35,13 +35,16 @@ public class myclick : MonoBehaviour {
 	}
 
 	void OnMouseUpAsButton() {
-        //transform.localScale += new Vector3(0.1F, 0, 0);
-        //UI.SetActive(!UI.activeInHierarchy);
-        controller.GetComponent<LevelStateScript>().updateQ(id);
-        controller.GetComponent<LevelStateScript>().updateCanvas();
-        UI.SetActive(true);
-		Cursor.lockState = CursorLockMode.None;
-		DisableMouse ();
+        if(UI.activeSelf == false)
+        {
+            //transform.localScale += new Vector3(0.1F, 0, 0);
+            //UI.SetActive(!UI.activeInHierarchy);
+            controller.GetComponent<LevelStateScript>().updateQ(id);
+            controller.GetComponent<LevelStateScript>().updateCanvas();
+            UI.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            DisableMouse();
+        }
 	}
 	
 	void DisableMouse() {
