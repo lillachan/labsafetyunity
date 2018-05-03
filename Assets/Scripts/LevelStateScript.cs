@@ -127,7 +127,9 @@ public class LevelStateScript : MonoBehaviour {
         Debug.Log(score);
 
         
-        GameObject.Find("Summary").GetComponent<TextMeshProUGUI>().text = "You found " +numFound() +" safety infractions out of "+numQs()+".You correctly identified why " +numCorrect()+ " of those " +numFound()+ " safety infractions were unsafe.";
+        GameObject.Find("Summary").GetComponent<TextMeshProUGUI>().text = "You found " +numFound()
+            +" safety infractions out of "+numQs()+". You correctly identified why " +numCorrect()+ 
+            " of those " +numFound()+ " safety infractions were unsafe. You clicked "+badClicks+" times when what you were clicking on was not a lab safety infraction.";
     }
 
     private int numQs()
