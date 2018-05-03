@@ -1,7 +1,6 @@
-WindowsStandalone
+OSXStandalone
 SceneListBegin?
 Assets/Scenes/StartMenu.unity
-Assets/Scenes/Mainhall_1.unity
 Assets/Scenes/Mainhall_2.unity
 Assets/Scenes/Mainhall_3.unity
 Assets/Scenes/Mainhall_4.unity
