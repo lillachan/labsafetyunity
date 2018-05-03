@@ -119,7 +119,38 @@ public class LevelStateScript : MonoBehaviour {
     private void setScore()
     {
         Debug.Log(GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = "Score: "+scoreCalc());
+
+        //Added Summary
+        GameObject.Find("Summary").GetComponent<TextMeshProUGUI>().text = "You found " +numFound() +" safety infractions out of 13.You correctly identified why " +numCorrect()+ " of those " +numFound()+ " safety infractions were unsafe.";
     }
+
+    //for summary
+    private int numFound()
+    {
+        int numFound = 0;
+        foreach(KeyValuePair<string, Question> q in qDict)
+        {
+            if (q.Value.foundBool())
+            {
+                numFound++;
+            }
+        }
+        return numFound;
+    }
+    //for summary
+    private int numCorrect()
+    {
+        int numCorrect = 0;
+                foreach(KeyValuePair<string, Question> q in qDict)
+        {
+            if (q.Value.selectedIsCorrect())
+            {
+                numCorrect++;
+            }
+        }
+        return numCorrect;
+    }
+
     private int scoreCalc()
     {
         int score = 0;
