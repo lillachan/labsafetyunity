@@ -37,3 +37,7 @@ sysinfo.txt
 #Lab Questions
 LabQuestions.cs
 LabQuestions.cs.meta
+
+
+#macOS
+.DS_Store
