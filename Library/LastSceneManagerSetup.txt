@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/StartMenu.unity
-=======
-- path: Assets/Scenes/Mainhall_12.unity
->>>>>>> 690b21959ccafd927fabf66e9001abdc5b6cfae3
   isLoaded: 1
   isActive: 1
