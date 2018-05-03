@@ -1219,6 +1219,7 @@ GameObject:
   - component: {fileID: 1119562790}
   - component: {fileID: 1119562789}
   - component: {fileID: 1119562788}
+  - component: {fileID: 1119562792}
   m_Layer: 0
   m_Name: hairDryer
   m_TagString: Untagged
@@ -1294,6 +1295,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -6.742, y: 45.938004, z: 72.413}
+--- !u!114 &1119562792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1119562787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb9fd02b88abc6459e20e41dcff6a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  id: hairDryer
+  cam: {fileID: 0}
 --- !u!1 &1154201006
 GameObject:
   m_ObjectHideFlags: 0

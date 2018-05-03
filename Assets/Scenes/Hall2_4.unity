@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 458972111}
   - component: {fileID: 458972110}
   - component: {fileID: 458972109}
+  - component: {fileID: 458972113}
   m_Layer: 0
   m_Name: fumeHood
   m_TagString: Untagged
@@ -801,6 +802,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -84.16801, y: -8.7960005, z: 9.005}
+--- !u!114 &458972113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458972108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb9fd02b88abc6459e20e41dcff6a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  id: fumeHood
+  cam: {fileID: 0}
 --- !u!1 &539607821
 GameObject:
   m_ObjectHideFlags: 0

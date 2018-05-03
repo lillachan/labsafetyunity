@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
-  id: 
+  id: hairDryer
   cam: {fileID: 234469486}
 --- !u!1 &787260279
 GameObject:
